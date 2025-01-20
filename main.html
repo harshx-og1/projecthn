@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love In Every Word</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #2b1d0e;
+            color: #d4c2a8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #3f2b1c, #5a3f2a);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            color: #d4c2a8;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 3px;
+        }
+
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            color: #f8d49d;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin: 0 auto 30px;
+            max-width: 800px;
+            text-align: justify;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 5px solid #3f2b1c;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.7);
+        }
+
+        .novel-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .novel-section p {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .novel-section p:first-letter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f8d49d;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+
+        footer {
+            text-align: center;
+            background: linear-gradient(90deg, #3f2b1c, #5a3f2a);
+            padding: 15px;
+            color: #d4c2a8;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .slideshow {
+            max-width: 70%;
+            /* Adjusted size for balance */
+            height: 500px;
+            /* Set fixed height for consistency */
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            /* Curved edges */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            border: 5px solid #f8d49d;
+            /* Adding a border */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            /* Enhance visual appeal */
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            /* Ensures fixed size */
+            object-fit: cover;
+            /* Maintains image aspect ratio */
+            display: none;
+            transition: opacity 1s ease-in-out;
+            /* Smooth fading effect */
+        }
+
+        .slideshow img.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            text-align: center;
+            color: #f8d49d;
+            font-size: 1.3rem;
+            background: rgba(0, 0, 0, 0.5);
+            /* Subtle backdrop for readability */
+            padding: 10px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .content h2 {
+            animation: pulse 2s infinite;
+        }
+
+
+        .love-message {
+            text-align: center;
+            margin: 50px 20px;
+            padding: 15px;
+            background: linear-gradient(145deg, #5a3f2a, #3f2b1c);
+            border-radius: 15px;
+            color: #f8d49d;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-out, pulse 3s infinite;
+        }
+
+        .love-message h3 {
+            font-size: 2.1rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .love-message p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const paragraphs = document.querySelectorAll(".novel-section p");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            paragraphs.forEach((paragraph) => {
+                observer.observe(paragraph);
+            });
+
+            // Slideshow functionality
+            const slides = document.querySelectorAll(".slideshow img");
+            let currentSlide = 0;
+
+            function showNextSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+
+            setInterval(showNextSlide, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Bound By Love, Not Distance</h1>
+    </header>
+
+    <div class="content">
+        <h2>The Chapter Of Us</h2>
+        <p>Dearest Nammu,</p>
+        <p>
+            Every moment with you feels like a page from a timeless novel. Despite the distance, our bond grows
+            stronger, and every chapter we write together fills my heart with joy.
+        </p>
+        <p>
+            I cherish the memories we've made and look forward to the adventures ahead. You are my inspiration, my muse,
+            and the love of my life.
+        </p>
+
+    </div>
+
+    <div class="slideshow">
+        <img src="images/hn1.jpeg" alt="Romantic Image 1" class="active">
+        <img src="images/hn2.jpeg" alt="Romantic Image 2">
+        <img src="images/hn3.jpeg" alt="Romantic Image 3">
+        <img src="images/hn4.jpeg" alt="Romantic Image 4">
+        <img src="images/hn5.jpeg" alt="Romantic Image 5">
+        <img src="images/hn6.jpeg" alt="Romantic Image 6">
+        <!--<div class="caption">"Every love story is beautiful, but ours is my favorite."</div>-->
+    </div>
+
+    <div class="novel-section">
+        <p>
+            Even though we are far apart, my heart feels you close every moment. You are always in my thoughts, in every
+            smile, in every dream. Our love is strong, and no distance can ever change that.
+        </p>
+        <p>
+            I remember the special times we’ve shared—the laughter, the dreams, and the promises we’ve made. Each memory
+            is a treasure, and I carry them with me wherever I go. You are my happiness, my inspiration, and my greatest
+            love.
+        </p>
+        <p>
+            One day, we will be together without miles between us. Until then, I will hold onto our love, knowing that
+            each day brings us closer. No matter where we are, you are always in my heart.
+        </p>
+        <p>
+            I dream of the day when our story no longer has pauses, when every sunrise and every twilight brings us
+            closer, not just in heart but in presence.
+        </p>
+        <h2>"Thinking of You"</h2>
+        <p>Every morning when I wake up, you are my first thought. I imagine your smile, your voice, and the way you
+            make everything feel right. Even in the quiet moments, I feel your love surrounding me.
+
+            Sometimes I close my eyes and picture us together, walking hand in hand, sharing stories, and laughing at
+            the little things. These thoughts make me feel closer to you and remind me how lucky I am to have you in my
+            life Nammu.
+
+            No matter where life takes us, I know that our love will always guide us back to each other.</p>
+        <h2>"You Are My Forever"</h2>
+        <p>Loving you is the easiest thing I have ever done. You bring so much joy, warmth, and love into my life, and I
+            can't imagine a world without you in it.
+
+            Even when we are apart, I feel connected to you in a way I can't explain. It's like our hearts are speaking
+            their own language, reminding us that we are meant to be.
+
+            I believe in us, in our love, and in the beautiful future we are building together. You are my forever, and
+            I will always love you Nammu.</p>
+        <p>
+            Until then, know this: you are my eternal muse, my reason for every word penned, every dream chased, and
+            every breath taken. Our story is one for the ages.
+        </p>
+        <p>Here’s a collection of your photos you sent me:</p>
+    </div>
+
+    <div class="gallery">
+        <img src="images/n3.jpeg" alt="You">
+        <img src="images/n6.jpeg" alt="You">
+        <img src="images/n4.jpeg" alt="You">
+        <img src="images/n2.jpeg" alt="You">
+    </div>
+
+    <div class="love-message">
+        <h3>I Love You Namrata</h3>
+        <p>
+            No matter the distance, my love for you knows no bounds. Every
+            thought is a reminder of how much you mean to me.
+        </p>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Made with ❤️ for you</p>
+    </footer>
+</body>
+
+</html>

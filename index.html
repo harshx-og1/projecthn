@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love In Every Word</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #2b1d0e;
+            color: #d4c2a8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #3f2b1c, #5a3f2a);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            color: #d4c2a8;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3b2a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #d4c2a8;
+            font-size: 1.3rem;
+            margin: 0 20px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #f8d49d;
+            transform: scale(1.1);
+        }
+
+        .container {
+            padding: 50px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container p {
+            font-size: 1.4rem;
+            line-height: 2;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        footer {
+            text-align: center;
+            background: linear-gradient(90deg, #3f2b1c, #5a3f2a);
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #d4c2a8;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-link {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 30px;
+            border: 2px solid #d4c2a8;
+            color: #d4c2a8;
+            text-decoration: none;
+            border-radius: 6px;
+            background: rgba(87, 51, 34, 0.2);
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .animated-link:hover {
+            background: #f8d49d;
+            color: #2b1d0e;
+            transform: scale(1.1);
+        }
+
+        .container p::first-letter {
+            font-size: 2rem;
+            color: #f8d49d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bound By Love, Not Distance</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <div class="container">
+        <p>Welcome to our special space Namrata. Click on "Discover More" to dive into a world of love.</p>
+        <a class="animated-link" href="main.html">Discover More</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Made with ❤️ for you</p>
+    </footer>
+</body>
+</html>
